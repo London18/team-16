@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type = "text/javascript"  src="{{ url_for('static', filename = 'js/js-index.js') }}" ></script>
 <style>
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
@@ -18,6 +19,15 @@ body, html {height: 100%}
     background-position: center;
     background-size: cover;
 }
+#loginForm {
+  display:none;
+}
+#registerationForm{
+  display:none;
+}
+.divLoginRegisterationForm{
+  padding-top:25px;
+}
 </style>
 <body>
 
@@ -26,12 +36,45 @@ body, html {height: 100%}
       AUTISTICA
     </div>
     <div class="w3-display-middle">
-      <button type="button" class="btn btn-primary">
+
+      <button type="button" class="btn btn-primary" id="loginButton">
         <h1 class="w3-jumbo w3-animate-top">LOGIN</h1>
       </button>
-      <button type="button" class="btn btn-success">
+      <button type="button" class="btn btn-success" id="registerationButton">
         <h1 class="w3-jumbo w3-animate-top">REGISTER</h1>
       </button>
+
+      <div class="divLoginRegisterationForm">
+
+        <form id="loginForm" action="/action_page.php">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <form id="registerationForm" action="/action_page.php">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Confirm Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+      </div>
+
     </div>
   </div>
 
