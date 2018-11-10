@@ -3,13 +3,13 @@ var mainState = {
     preload: function () {
 
 
-        game.load.image('player', 'assets/character.png');
+        game.load.image('player', 'assets/fox.png');
         game.load.image('wall', 'assets/wall2.png');
         game.load.image('coin', 'assets/coinv2.png');
         game.load.image('teleport', 'assets/teleport.png');
         game.load.image('door', 'assets/door.png');
         game.load.image('question', 'assets/question.png');
-        game.load.image('grass', 'assets/grassTile.png');
+        game.load.image('grass', 'assets/grass.png');
     },
 
     create: function () {
@@ -123,6 +123,7 @@ var mainState = {
     },
     getQuestion: function (player, question) {
         question.kill();
+      //  window.open('..demographics.html', '_blank');
     },
 
 
