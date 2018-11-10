@@ -5,6 +5,9 @@ import pymongo
 from pymongo import MongoClient
 application = Flask(__name__)
 
+client = MongoClient()
+db = client.passworddb
+
 @application.route('/')
 @application.route('/index')
 def firstPage():
@@ -61,6 +64,10 @@ def dashboardPage():
 @application.route('/employment_status')
 def employment_status():
     return render_template('employment_status.html')
+
+@application.route('/organisational_culture')
+def organisational_culture():
+    return render_template('organisational_culture.html')
 
 if __name__ == "__main__":
     application.run()
