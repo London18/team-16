@@ -31,7 +31,7 @@ $(document).ready(function(){
     if (n == 0) {
       $('#prevBtn').css('display', 'none');
     } else {
-      $('#prevBtn').css('display', 'block');
+      $('#prevBtn').css('display', 'inline');
     }
     if (n == (x.length - 1)) {
       $('#nextBtn').html('Submit');
