@@ -58,23 +58,22 @@ body, html {height: 100%}
       AUTISTICA
     </div>
     <div class="w3-display-middle">
-      <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-demographics.js') }}" ></script>
+      <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-employment-status.js') }}" ></script>
       <form id="regForm" action="">
 
         <h1>Demographics:</h1>
         <div class="tab">
           <div class="form-group">
-            <label for="Age">Age: </label>
-            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+            <label for="Age">Have you been promoted? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
           </div>
           <div class="form-group">
-            <label for="sel1">Gender: </label>
-            <select class="form-control" id="sel1">
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-              <option>Prefer not to say</option>
-            </select>
+            <label for="Age">Have you left your current job? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
           </div>
         </div>
 

@@ -8,11 +8,13 @@ var mainState = {
         game.load.image('coin', '../static/assets/coinv2.png');
         game.load.image('teleport', '../static/assets/teleport.png');
         game.load.image('door', '../static/assets/door.png');
+        game.load.image('question', '../static/assets/question.png');
+        game.load.image('grass', '../static/assets/grassTile.png');
     },
 
     create: function () {
-        game.stage.backgroundColor = '#6ae4ff';
-        game.world.setBounds(0, 0, 1920, 1920);
+        game.stage.backgroundColor = '#ffffff';
+        game.world.setBounds(0, 0, 5000, 5000);
 
         game.physics.startSystem(Phaser.Physics.P2JS);
 
@@ -27,24 +29,45 @@ var mainState = {
         behaviorPlugin.enable(this.player); // enable the plugin on the player
 
         this.player.behaviors.set('platformer', Phaser.Behavior.Platformer, {
-            velocity: 300,
+            velocity: 500,
             jumpStrength: 900,
-            gravity: 1300
+            gravity: 1000
         });
 
         // Map Builder
         this.walls = game.add.group();
         this.coins = game.add.group();
         this.teleports = game.add.group();
-        this.doors = game.add.group();
+        this.questions = game.add.group();
+        this.grasses = game.add.group();
 
         var level = [
-            'xxxxxxxxxxxxxxxxxxxxxx',
-            '!  o                 x',
-            '!           o        x',
-            '!       o       o    x',
-            '! o                  x',
-            'xxxxxxxxxxxxxxxxxxxxxx'
+            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+            '!  o                                         x',
+            '!           o                  pppp          x',
+            '!       o       o                            x',
+            '! o                                          x',
+            '! o  ppp               q                     x',
+            '! o                   pppp           ppp     x',
+            '! o                                          x',
+            '! o         q                                x',
+            '! o        pppp                              x',
+            '! o                    q       ppppp         x',
+            '! o                  pppp                    x',
+            '! o                                          x',
+            '! o               q                          x',
+            '! o             pppp                         x',
+            '! o                                  pppp    x',
+            '! o  ppp                    q                x',
+            '! o                        xxx               x',
+            '! o                  q                       x',
+            '! o          ppppppppppp                     x',
+            '! o                                          x',
+            '! o                                          x',
+            '! o      ppppp                     pppp      x',
+            '! o                                          x',
+            '! o                                          x',
+            'pppppppppppppppppppppppppppppppppppppppppppppp'
         ];
 
         for (var i = 0; i < level.length; i++) {
@@ -59,17 +82,27 @@ var mainState = {
                 } else if (level[i][j] === '!') {
                     var teleport = game.add.sprite(64 + 66 * j, 64 + 66 * i, 'teleport');
                     this.teleports.add(teleport);
-                } else if (level[i][j] === '*') {
-                    var door = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'door');
-                    this.doors.add(door);
+                } else if (level[i][j] === 'q') {
+                    var question = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'question');
+                    this.questions.add(question);
+                } else if (level[i][j] === 'p') {
+                    var grass = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'grass');
+                    this.grasses.add(grass);
+                    grass.body.immovable = true;
                 }
+
             }
         }
 
         // collision handlers
         this.player.behaviors.set('collide-on-wall', Phaser.Behavior.CollisionHandler, {
             targets: this.walls
-        });
+        })
+        ;
+        this.player.behaviors.set('collide-on-grass', Phaser.Behavior.CollisionHandler, {
+            targets: this.grasses
+        })
+        ;
 
         this.player.behaviors.set('collide-on-teleport', Phaser.Behavior.CollisionHandler, {
             method: 'overlap',
@@ -82,7 +115,16 @@ var mainState = {
             targets: this.coins,
             collideCallback: this.takeCoin
         });
+        this.player.behaviors.set('collect-question', Phaser.Behavior.CollisionHandler, {
+            method: 'overlap',
+            targets: this.questions,
+            collideCallback: this.getQuestion
+        });
     },
+    getQuestion: function (player, question) {
+        question.kill();
+    },
+
 
     takeCoin: function (player, coin) {
         coin.kill();
@@ -96,16 +138,17 @@ var treeState = {
     preload: function () {
         game.load.crossOrigin = 'anonymous';
 
-        game.load.image('player', '../assets/character.png');
+        game.load.image('player', '../static/assets/character.png');
         game.load.image('wall', '../static/assets/wall2.png');
         game.load.image('coin', '../static/assets/coinv2.png');
         game.load.image('teleport', '../static/assets/teleport.png');
         game.load.image('door', '../static/assets/door.png');
+        game.load.image('question', '../static/assets/question.png');
     },
 
     create: function () {
-        game.stage.backgroundColor = '#6ae4ff';
-        game.world.setBounds(0, 0, 1920, 5000);
+        game.stage.backgroundColor = '#ffffff';
+        game.world.setBounds(0, 0, 5000, 5000);
 
         game.physics.startSystem(Phaser.Physics.P2JS);
 
@@ -120,9 +163,9 @@ var treeState = {
         behaviorPlugin.enable(this.player); // enable the plugin on the player
 
         this.player.behaviors.set('platformer', Phaser.Behavior.Platformer, {
-            velocity: 300,
+            velocity: 500,
             jumpStrength: 900,
-            gravity: 1300
+            gravity: 1000
         });
 
         // Map Builder
@@ -132,13 +175,34 @@ var treeState = {
         this.doors = game.add.group();
 
         var level = [
-            'xxxxxxxxxxxxxxxxxxxxxx',
-            '!                    x',
-            '!                    x',
-            '!                    x',
-            '!                    x',
-            'xxxxxxxxxxxxxxxxxxxxxx'
+            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            '!                                            x',
+            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
         ];
+
         for (var i = 0; i < level.length; i++) {
             for (var j = 0; j < level[i].length; j++) {
                 if (level[i][j] === 'x') {
