@@ -6,14 +6,14 @@ var mainState = {
     preload: function () {
 
 
-        game.load.image('player', '../templates/assets/fox.PNG');
-        game.load.image('wall', '../templates/assets/wall2.PNG');
-        game.load.image('coin', '../templates/assets/coinv2.PNG');
-        game.load.image('teleport', '../templates/assets/teleport.PNG');
-        game.load.image('door', '../templates/assets/door.PNG');
-        game.load.image('question', '../templates/assets/question.PNG');
-        game.load.image('grass', '../templates/assets/grass.PNG');
-        game.load.image('tree', '../templates/assets/treeSmall.PNG');
+        game.load.image('player', '../templates/assets/fox.png');
+        game.load.image('wall', '../templates/assets/wall2.png');
+        game.load.image('coin', '../templates/assets/coinv2.png');
+        game.load.image('teleport', '../templates/assets/teleport.png');
+        game.load.image('door', '../templates/assets/door.png');
+        game.load.image('question', '../templates/assets/question.png');
+        game.load.image('grass', '../templates/assets/grass.png');
+        game.load.image('tree', '../templates/assets/treeSmall.png');
     },
 
     create: function () {
@@ -151,15 +151,15 @@ var mainState = {
 };
 var treeState = {
     preload: function () {
-        game.load.image('player', '../templates/assets/fox.PNG');
-        game.load.image('wall', '../templates/assets/wall2.PNG');
-        game.load.image('coin', '../templates/assets/coinv2.PNG');
-        game.load.image('teleport', '../templates/assets/teleport.PNG');
-        game.load.image('door', '../templates/assets/door.PNG');
-        game.load.image('question', '../templates/assets/question.PNG');
-        game.load.image('tree', '../templates/assets/treeSmall.PNG');
-        game.load.image('tree1', '../templates/assets/midTree.PNG');
-        game.load.image('tree2', '../templates/assets/treeBig.PNG');
+        game.load.image('player', '../templates/assets/fox.png');
+        game.load.image('wall', '../templates/assets/wall2.png');
+        game.load.image('coin', '../templates/assets/coinv2.png');
+        game.load.image('teleport', '../templates/assets/teleport.png');
+        game.load.image('door', '../templates/assets/door.png');
+        game.load.image('question', '../templates/assets/question.png');
+        game.load.image('tree', '../templates/assets/treeSmall.png');
+        game.load.image('tree1', '../templates/assets/midTree.png');
+        game.load.image('tree2', '../templates/assets/treeBig.png');
     },
 
     create: function () {

@@ -39,7 +39,7 @@ def my_form_post():
             if document['pword'] == emailPassword:
                 ids = document['_id']
 
-                return redirect('/demographics')
+                return redirect('/game')
 
         return render_template('index.html')
 
@@ -109,7 +109,26 @@ def customisation():
 
 
 @application.route('/open_ended')
+def open_ended():
+    return render_template('open_ended.html')
+@application.route('/open_ended', methods=['POST'])
 def open_endedPage():
+
+    client = MongoClient()
+    db = client.passworddb
+
+    oe1 = str(request.form['oe1'])
+    oe2 = str(request.form['oe2'])
+    oe3 = str(request.form['oe3'])
+    oe4 = str(request.form['oe4'])
+    
+
+    posts = db.openends
+    post_id = posts.insert_one({"oe1":oe1})
+
+
+
+
     return render_template('open_ended.html')
 
 if __name__ == "__main__":
