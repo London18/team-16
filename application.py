@@ -65,5 +65,9 @@ def dashboardPage():
 def employment_status():
     return render_template('employment_status.html')
 
+@application.route('/organisational_culture')
+def organisational_culture():
+    return render_template('organisational_culture.html')
+
 if __name__ == "__main__":
     application.run()
