@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f95e4b4c-b53c-4fc8-9ad3-558fca92fda6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/static/assets/character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/coin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/coinv2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/door.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/enemy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/floor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/player.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/teleport.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/wall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/wall2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/behaviors/collision-handler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/behaviors/platformer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/game.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/game.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/question.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,14 +21,18 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="game.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="85">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -55,10 +49,15 @@
       <file leaf-file-name="game.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+            <state relative-caret-position="289">
+              <caret line="53" column="57" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wall.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/assets/wall.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -78,6 +77,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/templates/game.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/static/js/game.js" />
       </list>
     </option>
@@ -148,14 +148,15 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Szymon\Desktop\java\team-16\static\assets" />
+      <recent name="C:\Users\Szymon\Desktop\java\team-16\static\js" />
+      <recent name="C:\Users\Szymon\Desktop\java\team-16\static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Szymon\Desktop\java\team-16\static" />
       <recent name="C:\Users\Szymon\Desktop\java\team-16\static\js\assets" />
       <recent name="C:\Users\Szymon\Desktop\java\team-16\static\js" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Szymon\Desktop\java\team-16\static\js" />
-      <recent name="C:\Users\Szymon\Desktop\java\team-16\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -181,12 +182,12 @@
       <option name="presentableId" value="Default" />
       <updated>1541811317381</updated>
       <workItem from="1541811318809" duration="2029000" />
-      <workItem from="1541813363596" duration="538000" />
+      <workItem from="1541813363596" duration="3358000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2567000" />
+    <option name="totallyTimeSpent" value="5387000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -219,7 +220,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -269,19 +270,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/wall.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+        <state relative-caret-position="289">
+          <caret line="53" column="57" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
         </state>
       </provider>
     </entry>
