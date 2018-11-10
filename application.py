@@ -9,7 +9,6 @@ application = Flask(__name__)
 @application.route('/index')
 def firstPage():
     return render_template('index.html', userEmail="NOTHING")
-
 @application.route('/', methods=['POST'])
 @application.route('/index', methods=['POST'])
 def my_form_post():
@@ -32,25 +31,22 @@ def my_form_post():
     if len(emailLogin) and len(emailPassword):
 
         document = db.passwords.find_one({ "email": emailLogin })
-        print(document)
-
 
         if (document):
-
             if document['pword'] == emailPassword:
                 print("arg")
                 return render_template('index.html')
 
         return render_template('index.html')
 
-
-
-
     if len(emailLogin) or len(emailPassword):
         return render_template('index.html', userEmail=str(emailLogin))
     return render_template('index.html')
 
 @application.route('/demographics')
+def demographics():
+    return render_template('demographics.html')
+@application.route('/demographics', methods=['POST'])
 def demographics():
     return render_template('demographics.html')
 
