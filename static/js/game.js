@@ -171,21 +171,17 @@ var treeState = {
         this.coins = game.add.group();
         this.teleports = game.add.group();
         this.doors = game.add.group();
+        this.trees = game.add.group();
 
         var level = [
-            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+            'xxxxxxxxxxxxx',
+            '!           x',
+            '!           x',
+            '!           x',
+            '!       t   x',
+            '!           x',
+            '!           x',
+            'xxxxxxxxxxxxx'
         ];
 
         for (var i = 0; i < level.length; i++) {
@@ -203,6 +199,9 @@ var treeState = {
                 } else if (level[i][j] === '*') {
                     var door = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'door');
                     this.doors.add(door);
+                } else if (level[i][j] === '*') {
+                    var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree');
+                    this.trees.add(tree);
                 }
             }
         }
