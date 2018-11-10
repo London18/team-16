@@ -46,35 +46,39 @@ body, html {height: 100%}
 
       <div class="divLoginRegisterationForm">
 
-        <form id="loginForm" method="POST"><!-- action="/action_page.php" -->
-          <div class="form-group">
-            <label for="email">Email: </label>
-            <input type="email" class="form-control" id="loginEmail" value="{{userEmail}}" placeholder="Enter email" name="loginEmail">
+        <form method="POST">
+
+          <div id="loginForm">
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="email" class="form-control" id="loginEmail" value="{{userEmail}}" placeholder="Enter email" name="loginEmail">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" name="loginPassword">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
           </div>
-          <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" name="loginPassword">
+
+          <div id="registerationForm"><!-- action="/action_page.php" -->
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="registerEmail" placeholder="Enter email" name="registerEmail">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="registerPassword" placeholder="Enter password" name="registerPassword">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Confirm Password:</label>
+              <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Enter password" name="registerConfirmPassword">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <form id="registerationForm" method="POST"><!-- action="/action_page.php" -->
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="registerEmail" placeholder="Enter email" name="registerEmail">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="registerPassword" placeholder="Enter password" name="registerPassword">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Confirm Password:</label>
-            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Enter password" name="registerConfirmPassword">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          
         </form>
 
       </div>
-
     </div>
   </div>
 

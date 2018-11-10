@@ -12,12 +12,12 @@ def my_form_post():
     emailLogin = str(request.form['loginEmail'])
     emailPassword = str(request.form['loginPassword'])
 
-    registerEmail = str(request.form['registerEmail'])
-    registerPassword = str(request.form['registerPassword'])
-    registerConfirmPassword = str(request.form['registerConfirmPassword'])
+    registerEmail = request.form['registerEmail']
+    registerPassword = request.form['registerPassword']
+    registerConfirmPassword = request.form['registerConfirmPassword']
 
     if len(emailLogin) or len(emailPassword):
-        return render_template('index.html', userEmail=str(text), userPassword=str(emailPassword))
+        return render_template('index.html', userEmail=str(emailLogin))
     return render_template('index.html')
 
 @application.route('/tmp')
