@@ -9,7 +9,7 @@ var mainState = {
         game.load.image('teleport', '../static/assets/teleport.png');
         game.load.image('door', '../static/assets/door.png');
         game.load.image('question', '../static/assets/question.png');
-        game.load.image('grass', '../static/assets/grassTile.png');
+        game.load.image('grass', '../static/assets/grass.png');
     },
 
     create: function () {
@@ -123,6 +123,7 @@ var mainState = {
     },
     getQuestion: function (player, question) {
         question.kill();
+      //  window.open('..demographics.html', '_blank');
     },
 
 
