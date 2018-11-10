@@ -60,7 +60,7 @@ def dashboardPage():
 
 @application.route('/Employment_status')
 def employment_status():
-    return render_template('EmploymentStatus.html')
+    return render_template('employment_status.html')
 
 if __name__ == "__main__":
     application.run()
