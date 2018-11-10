@@ -19,5 +19,10 @@ def my_form_post():
     if len(emailLogin) or len(emailPassword):
         return render_template('index.html', userEmail=str(text), userPassword=str(emailPassword))
     return render_template('index.html')
+
+@application.route('/tmp')
+def tmpPage():
+    return render_template('tmp.html')
+
 if __name__ == "__main__":
     application.run()
