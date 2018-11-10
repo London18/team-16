@@ -9,9 +9,15 @@ def firstPage():
 @application.route('/', methods=['POST'])
 @application.route('/index', methods=['POST'])
 def my_form_post():
-    emailLogin = request.form['loginEmail']
-    emailPassword = request.form['loginPassword']
-    return render_template('index.html', userEmail=str(text), userPassword=str(emailPassword))
+    emailLogin = str(request.form['loginEmail'])
+    emailPassword = str(request.form['loginPassword'])
 
+    registerEmail = str(request.form['registerEmail'])
+    registerPassword = str(request.form['registerPassword'])
+    registerConfirmPassword = str(request.form['registerConfirmPassword'])
+
+    if len(emailLogin) or len(emailPassword):
+        return render_template('index.html', userEmail=str(text), userPassword=str(emailPassword))
+    return render_template('index.html')
 if __name__ == "__main__":
     application.run()
