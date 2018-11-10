@@ -18,6 +18,7 @@ def my_form_post():
     emailLogin = str(request.form['loginEmail'])
     emailPassword = str(request.form['loginPassword'])
 
+
     registerEmail = request.form['registerEmail']
     registerPassword = request.form['registerPassword']
     registerConfirmPassword = request.form['registerConfirmPassword']
@@ -26,6 +27,23 @@ def my_form_post():
         posts = db.passwords
         post_id = posts.insert_one({"email":registerEmail,"pword":registerPassword})
         return render_template('index.html')
+
+
+    if len(emailLogin) and len(emailPassword):
+
+        document = db.passwords.find_one({ "email": emailLogin })
+        print(document)
+
+
+        if (document):
+            
+            if document['pword'] == emailPassword:
+                print("arg")
+                return render_template('index.html')
+
+        return render_template('index.html')
+
+
 
 
     if len(emailLogin) or len(emailPassword):
