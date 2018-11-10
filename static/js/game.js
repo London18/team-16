@@ -123,7 +123,7 @@ var mainState = {
     },
     getQuestion: function (player, question) {
         question.kill();
-      //  window.open('..demographics.html', '_blank');
+        window.open('demographics.html', '_blank');
     },
 
 
