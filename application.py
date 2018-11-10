@@ -5,9 +5,6 @@ import pymongo
 from pymongo import MongoClient
 application = Flask(__name__)
 
-client = MongoClient()
-db = client.passworddb
-
 @application.route('/')
 @application.route('/index')
 def firstPage():
@@ -46,12 +43,7 @@ def my_form_post():
         return render_template('index.html', userEmail=str(emailLogin))
     return render_template('index.html')
 
-@application.route('/demographics')
-def demographics():
-    return render_template('demographics.html')
-@application.route('/demographics', methods=['POST'])
-def demographics_post():
-    return render_template('demographics.html')
+
 
 @application.route('/game')
 def game():
@@ -61,7 +53,7 @@ def game():
 def dashboardPage():
     return render_template('dashboard.html')
 
-@application.route('/employment_status')
+@application.route('/Employment_status')
 def employment_status():
     return render_template('employment_status.html')
 
