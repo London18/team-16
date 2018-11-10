@@ -134,7 +134,7 @@ var mainState = {
     },
     getQuestion: function (player, question) {
         question.kill();
-        var questionaires = ["demographics.html", "employment_status.html", "organisational_culture.html", "open_ended.html"];
+        var questionaires = ["demographics", "employment_status", "organisational_culture", "open_ended"];
         var rand = Math.floor(Math.random() * 4);
         window.open(questionaires[rand], '_blank');
         score += 5;
