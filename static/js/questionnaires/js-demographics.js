@@ -16,11 +16,10 @@ $(document).ready(function(){
   showTab(currentTab); // Display the current tab
 
   $('#prevBtn').click(() => {
-    alert("Hello");
     nextPrev(-1)
   })
-  $('#nextBtnCLICKED').click(function(){
-    alert("HELLO")
+  $('#nextBtn').click(() => {
+    nextPrev(1)
   })
 
   function showTab(n) {
