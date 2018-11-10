@@ -5,15 +5,21 @@ var scoreText;
 var mainState = {
     preload: function () {
 
+        wall = $('#wall').attr('src')
+        player = $('#player').attr('src')
+        coin = $('#coin').attr('src')
+        teleport = $('#teleport').attr('src')
+        question = $('#question').attr('src')
+        grass = $('#grass').attr('src')
+        tree = $('#tree').attr('src')
 
-        game.load.image('player', '../templates/assets/fox.png');
-        game.load.image('wall', '../templates/assets/wall2.png');
-        game.load.image('coin', '../templates/assets/coinv2.png');
-        game.load.image('teleport', '../templates/assets/teleport.png');
-        game.load.image('door', '../templates/assets/door.png');
-        game.load.image('question', '../templates/assets/question.png');
-        game.load.image('grass', '../templates/assets/grass.png');
-        game.load.image('tree', '../templates/assets/treeSmall.png');
+        game.load.image('wall', wall);
+        game.load.image('player', player);
+        game.load.image('coin', coin);
+        game.load.image('teleport', teleport);
+        game.load.image('question', question);
+        game.load.image('grass', grass);
+        game.load.image('tree', tree);
     },
 
     create: function () {
@@ -128,7 +134,7 @@ var mainState = {
     },
     getQuestion: function (player, question) {
         question.kill();
-        var questionaires = ["demographics.html", "employment_status.html", "organisational_culture.html", "open_ended.html"];
+        var questionaires = ["demographics", "employment_status", "organisational_culture", "open_ended"];
         var rand = Math.floor(Math.random() * 4);
         window.open(questionaires[rand], '_blank');
         score += 5;
@@ -151,15 +157,23 @@ var mainState = {
 };
 var treeState = {
     preload: function () {
-        game.load.image('player', '../templates/assets/fox.png');
-        game.load.image('wall', '../templates/assets/wall2.png');
-        game.load.image('coin', '../templates/assets/coinv2.png');
-        game.load.image('teleport', '../templates/assets/teleport.png');
-        game.load.image('door', '../templates/assets/door.png');
-        game.load.image('question', '../templates/assets/question.png');
-        game.load.image('tree', '../templates/assets/treeSmall.png');
-        game.load.image('tree1', '../templates/assets/midTree.png');
-        game.load.image('tree2', '../templates/assets/treeBig.png');
+        wall = $('#wall').attr('src')
+        player = $('#player').attr('src')
+        coin = $('#coin').attr('src')
+        teleport = $('#teleport').attr('src')
+        question = $('#question').attr('src')
+        tree = $('#tree').attr('src')
+        tree1 = $('#tree1').attr('src')
+        tree2 = $('#tree2').attr('src')
+
+        game.load.image('player', player);
+        game.load.image('wall', wall);
+        game.load.image('coin', coin);
+        game.load.image('teleport', teleport);
+        game.load.image('question', question);
+        game.load.image('tree', tree);
+        game.load.image('tree1', tree1);
+        game.load.image('tree2', tree2);
     },
 
     create: function () {
