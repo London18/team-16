@@ -36,7 +36,7 @@ def my_form_post():
 
         if (document):
             if document['pword'] == emailPassword:
-                print("arg")
+                print(document['_id'])
                 ids = document['_id']
                 return render_template('demographics.html')
 
