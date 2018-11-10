@@ -26,9 +26,8 @@ $(document).ready(function(){
   function showTab(n) {
     // This function will display the specified tab of the form ...
     x = $(".tab");
-    alert("HERE")
     x[n].style.display = "block";
-    alert("Again")
+    /*
     // ... and fix the Previous/Next buttons:
     if (n == 0) {
       document.getElementById("prevBtn").style.display = "none";
@@ -42,6 +41,7 @@ $(document).ready(function(){
     }
     // ... and run a function that displays the correct step indicator:
     fixStepIndicator(n)
+    */
   }
 
   function nextPrev(n) {
