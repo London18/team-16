@@ -5,6 +5,9 @@ import pymongo
 from pymongo import MongoClient
 application = Flask(__name__)
 
+client = MongoClient()
+db = client.passworddb
+
 @application.route('/')
 @application.route('/index')
 def firstPage():
