@@ -58,8 +58,8 @@ body, html {height: 100%}
       AUTISTICA
     </div>
     <div class="w3-display-middle">
-      <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-employment-status.js') }}" ></script>
-      <form id="regForm" action="">
+      <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-generic-file.js') }}" ></script>
+      <form id="regForm" action="" method="POST">
 
         <h1>Employment Status:</h1>
         <div class="tab">
@@ -119,6 +119,7 @@ body, html {height: 100%}
           <div style="float:right;">
             <button class="btn btn-primary" type="button" id="prevBtn">Previous</button>
             <button class="btn btn-primary" type="button" id="nextBtn">Next</button>
+            <button class="btn btn-primary" type="submit" id="submit">Submit</button>
           </div>
         </div>
 

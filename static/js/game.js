@@ -1,4 +1,7 @@
 // based on http://www.lessmilk.com/tutorial/2d-platformer-phaser
+
+var score = 0;
+var scoreText;
 var mainState = {
     preload: function () {
 
@@ -10,9 +13,11 @@ var mainState = {
         game.load.image('door', 'assets/door.png');
         game.load.image('question', 'assets/question.png');
         game.load.image('grass', 'assets/grass.png');
+        game.load.image('tree', 'assets/treeSmall.png');
     },
 
     create: function () {
+        scoreText = game.add.text(16, 16, 'score: 0', {fontSize: '32px', fill: '#000'});
         game.stage.backgroundColor = '#ffffff';
         game.world.setBounds(0, 0, 5000, 5000);
 
@@ -43,30 +48,30 @@ var mainState = {
 
         var level = [
             'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-            '!  o                                         x',
+            '!                                            x',
             '!           o                  pppp          x',
-            '!       o       o                            x',
-            '! o                                          x',
-            '! o  ppp               q                     x',
-            '! o                   pppp           ppp     x',
-            '! o                                          x',
-            '! o         q                                x',
-            '! o        pppp                              x',
-            '! o                    q       ppppp         x',
-            '! o                  pppp                    x',
-            '! o                                          x',
+            '!       o       o                    o       x',
+            '!                                            x',
+            '! o  ppp               q          o          x',
+            '!                     pppp           ppp     x',
+            '!                                            x',
+            '!           q                                x',
+            '!          pppp                  o           x',
+            '!                      q       ppppp         x',
+            '!                    pppp                    x',
+            '!                                            x',
             '! o               q                          x',
-            '! o             pppp                         x',
-            '! o                                  pppp    x',
-            '! o  ppp                    q                x',
-            '! o                        ppp               x',
-            '! o                  q                       x',
-            '! o          ppppppppppp                     x',
-            '! o                                          x',
-            '! o                                          x',
-            '! o      ppppp                     pppp      x',
-            '! o                                          x',
-            '! o                                          x',
+            '!               pppp                         x',
+            '!                                    pppp    x',
+            '!    ppp                    q                x',
+            '!                          ppp               x',
+            '!                    q                       x',
+            '!            ppppppppppp                     x',
+            '!                                            x',
+            '!                                     o      x',
+            '!        ppppp         o       o   pppp      x',
+            '!                                            x',
+            '!                                            x',
             'pppppppppppppppppppppppppppppppppppppppppppppp'
         ];
 
@@ -123,21 +128,26 @@ var mainState = {
     },
     getQuestion: function (player, question) {
         question.kill();
-        window.open('demographics.html', '_blank');
+        var questionaires = ["demographics.html", "employment_status.html", "organisational_culture.html"];
+        var rand = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+        window.open(questionaires[rand], '_blank');
+        score += 5;
+        scoreText.text = 'Score: ' + score;
+
     },
 
 
     takeCoin: function (player, coin) {
+        score += 1;
+        scoreText.text = 'Score: ' + score;
         coin.kill();
     },
 
     transfer: function () {
         game.state.start('tree');
-    }
+    },
 
-    randomUrl: function () {
-      
-    }
+
 };
 var treeState = {
     preload: function () {
@@ -147,9 +157,13 @@ var treeState = {
         game.load.image('teleport', '../static/assets/teleport.png');
         game.load.image('door', '../static/assets/door.png');
         game.load.image('question', '../static/assets/question.png');
+        game.load.image('tree', 'assets/treeSmall.png');
+        game.load.image('tree1', 'assets/midTree.png');
+        game.load.image('tree2', 'assets/treeBig.png');
     },
 
     create: function () {
+        scoreText = game.add.text(16, 16, 'score:' + score, {fontSize: '32px', fill: '#000'});
         game.stage.backgroundColor = '#ffffff';
         game.world.setBounds(0, 0, 5000, 5000);
 
@@ -176,21 +190,17 @@ var treeState = {
         this.coins = game.add.group();
         this.teleports = game.add.group();
         this.doors = game.add.group();
+        this.trees = game.add.group();
 
         var level = [
-            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+            'xxxxxxxxxxxxxxxxx',
+            '!               x',
+            '!               x',
+            '!         t     x',
+            '!               x',
+            '!               x',
+            '!               x',
+            'xxxxxxxxxxxxxxxxx'
         ];
 
         for (var i = 0; i < level.length; i++) {
@@ -208,6 +218,22 @@ var treeState = {
                 } else if (level[i][j] === '*') {
                     var door = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'door');
                     this.doors.add(door);
+                } else if (level[i][j] === 't') {
+
+                    if (score < 8) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree');
+                    if (score > 7 && score <= 15) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree1');
+                    if (score > 15) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree2');
+
+                    behaviorPlugin.enable(tree);
+                    tree.behaviors.set('collide-on-wall', Phaser.Behavior.CollisionHandler, {
+                        targets: this.walls
+                    });
+                    tree.behaviors.set('tree', Phaser.Behavior.Platformer, {
+                        velocity: 0,
+                        jumpStrength: 0,
+                        gravity: 1000000
+                    });
+                    this.trees.add(tree);
                 }
             }
         }
@@ -231,6 +257,8 @@ var treeState = {
     },
 
     takeCoin: function (player, coin) {
+        score += 1;
+        scoreText.text = 'Score: ' + score;
         coin.kill();
     },
 
