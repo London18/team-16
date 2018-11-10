@@ -61,7 +61,6 @@ body, html {height: 100%}
 
       <!--
       <div class="divDemographics">
-        <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-demographics.js') }}" ></script>
         <form id="demographicsForm" method="POST">
           <div class="form-group">
             <label for="Age">Age: </label>
@@ -124,6 +123,8 @@ body, html {height: 100%}
         </form>
       </div>
       -->
+
+      <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-demographics.js') }}" ></script>
       <form id="regForm" action="">
 
         <h1>Demographics:</h1>
@@ -206,8 +207,8 @@ body, html {height: 100%}
 
         <div style="overflow:auto;">
           <div style="float:right;">
-            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            <button type="button" id="prevBtn">Previous</button>
+            <button type="button" id="nextBtn">Next</button>
           </div>
         </div>
 
