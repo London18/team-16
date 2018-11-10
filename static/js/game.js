@@ -3,13 +3,13 @@ var mainState = {
     preload: function () {
 
 
-        game.load.image('player', 'assets/fox.png');
+        game.load.image('player', 'assets/character.png');
         game.load.image('wall', 'assets/wall2.png');
         game.load.image('coin', 'assets/coinv2.png');
         game.load.image('teleport', 'assets/teleport.png');
         game.load.image('door', 'assets/door.png');
         game.load.image('question', 'assets/question.png');
-        game.load.image('grass', 'assets/grass.png');
+        game.load.image('grass', 'assets/grassTile.png');
     },
 
     create: function () {
@@ -123,7 +123,6 @@ var mainState = {
     },
     getQuestion: function (player, question) {
         question.kill();
-      //  window.open('..demographics.html', '_blank');
     },
 
 
@@ -172,21 +171,17 @@ var treeState = {
         this.coins = game.add.group();
         this.teleports = game.add.group();
         this.doors = game.add.group();
+        this.trees = game.add.group();
 
         var level = [
-            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+            'xxxxxxxxxxxxx',
+            '!           x',
+            '!           x',
+            '!           x',
+            '!       t   x',
+            '!           x',
+            '!           x',
+            'xxxxxxxxxxxxx'
         ];
 
         for (var i = 0; i < level.length; i++) {
@@ -204,6 +199,9 @@ var treeState = {
                 } else if (level[i][j] === '*') {
                     var door = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'door');
                     this.doors.add(door);
+                } else if (level[i][j] === '*') {
+                    var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree');
+                    this.trees.add(tree);
                 }
             }
         }
