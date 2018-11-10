@@ -37,29 +37,149 @@ body, html {height: 100%}
     </div>
     <div class="w3-display-middle">
 
+      <!--
       <div class="divDemographics">
-        <form id="demographicsForm" method="POST"><!-- action="/action_page.php" -->
+        <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-demographics.js') }}" ></script>
+        <form id="demographicsForm" method="POST">
           <div class="form-group">
             <label for="Age">Age: </label>
             <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
           </div>
           <div class="form-group">
-            <label for="pwd">Gender:</label>
-            <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" name="loginPassword">
-            <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Gender
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Male</a></li>
-                <li><a href="#">Female</a></li>
-                <li><a href="#">Other</a></li>
-                <li><a href="#">Prefer not to say</a></li>
-              </ul>
-            </div>
+            <label for="sel1">Gender: </label>
+            <select class="form-control" id="sel1">
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sel1">Diagnosis: </label>
+            <select class="form-control" id="sel1">
+              <option>Autistic</option>
+              <option>Non-Autistic (work with an autistic employee)</option>
+              <option>Non-Autistic (don’t know any other autistic employees)</option>
+              <option>Undiagnosed (but potentially autistic)</option>
+              <option>Neurodivergent (e.g. dyslexic)</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Age">Type of Organisation: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+          <div class="form-group">
+            <label for="Age">Size of organisation: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+          <div class="form-group">
+            <label for="Age">Number of people you work with on a daily basis: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+          
+          <div class="form-group">
+            <label for="Age">Months spent in organisation: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+          <div class="form-group">
+            <label for="Age">Annual salary: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+          <div class="form-group">
+            <label for="Age">Level of education (primary, secondary, diploma, undergraduate, postgraduate): </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+          <div class="form-group">
+            <label for="Age">Number of past jobs: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+          <div class="form-group">
+            <label for="Age">Number of people from your personal life that you feel can provide support/advice about your work: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
       </div>
+      -->
+      <form id="regForm" action="">
+
+        <h1>Demographics:</h1>
+        <div class="tab">Name:
+          <div class="form-group">
+            <label for="Age">Age: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+          <div class="form-group">
+            <label for="sel1">Gender: </label>
+            <select class="form-control" id="sel1">
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tab">Contact Info:
+          <div class="form-group">
+            <label for="sel1">Diagnosis: </label>
+            <select class="form-control" id="sel1">
+              <option>Autistic</option>
+              <option>Non-Autistic (work with an autistic employee)</option>
+              <option>Non-Autistic (don’t know any other autistic employees)</option>
+              <option>Undiagnosed (but potentially autistic)</option>
+              <option>Neurodivergent (e.g. dyslexic)</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Age">Type of Organisation: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="Age">Size of organisation: </label>
+          <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+        </div>
+        <div class="form-group">
+          <label for="Age">Number of people you work with on a daily basis: </label>
+          <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+        </div>
+
+        <div class="tab">Birthday:
+          <div class="form-group">
+            <label for="Age">Size of organisation: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+          <div class="form-group">
+            <label for="Age">Number of people you work with on a daily basis: </label>
+            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+          </div>
+        </div>
+
+        <div class="tab">Login Info:
+          <p><input placeholder="Username..." oninput="this.className = ''"></p>
+          <p><input placeholder="Password..." oninput="this.className = ''"></p>
+        </div>
+
+        <div style="overflow:auto;">
+          <div style="float:right;">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+          </div>
+        </div>
+
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+
+      </form>
 
     </div>
   </div>
