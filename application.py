@@ -1,10 +1,12 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 import pymongo
 
 from pymongo import MongoClient
 application = Flask(__name__)
+
 ids = ""
+
 @application.route('/')
 @application.route('/index')
 def firstPage():
@@ -20,11 +22,10 @@ def my_form_post():
     registerEmail = request.form['registerEmail']
     registerPassword = request.form['registerPassword']
     registerConfirmPassword = request.form['registerConfirmPassword']
-    print(registerPassword)
-    print(registerConfirmPassword)
 
-    if len(registerEmail) and len(registerPassword) and len(registerConfirmPassword) and registerPassword == registerConfirmPassword:
-        print("hello")
+
+    if len(registerEmail) and registerPassword == registerConfirmPassword:
+
         posts = db.passwords
         post_id = posts.insert_one({"email":registerEmail,"pword":registerPassword})
         return render_template('index.html')
@@ -36,9 +37,9 @@ def my_form_post():
 
         if (document):
             if document['pword'] == emailPassword:
-                print(document['_id'])
-                ids = document['_id']
-                return render_template('demographics.html')
+                ids = document[_id]
+
+                return redirect('/demographics')
 
         return render_template('index.html')
 
@@ -50,22 +51,29 @@ def my_form_post():
 @application.route('/demographics')
 def demographics():
     return render_template('demographics.html')
-@application.route('/demographics', methods=['POST'])
+@application.route('/demographics', methods=['POST', 'GET'])
 def demographics_post():
-    print("HERE")
+
+
     client = MongoClient()
     db = client.passworddb
 
     demAge = str(request.form['demographicsAge'])
+    demGen = str(request.form['sel1'])
+    demDiag = str(request.form['sel2'])
+    typeOfOrg = str(request.form['typeOfOrg'])
+    sizeOfOrg = str(request.form['sizeOfOrg'])
+    NoP = str(request.form['NoP'])
+    monthinorg = str(request.form['monthinorg'])
+    annsal = str(request.form['annsal'])
 
 
 
 
-
-    demGen = str(request.form.get('sel1'))
+    print(demGen,"hello")
 
     posts = db.answers
-    post_id = posts.insert_one({"demAge":demAge,"demGender":demGen})
+    post_id = posts.insert_one({"id":ids,"demAge":demAge,"demGender":demGen, "Diagnosis":demDiag, "typeOfOrg":typeOfOrg,"sizeOfOrg": sizeOfOrg, "NumberOfPeople":NoP, "MonthInOrg":monthinorg,"annualSal":annsal})
 
     return render_template('demographics.html')
 
@@ -73,6 +81,9 @@ def demographics_post():
 
 @application.route('/game')
 def game():
+
+    client = MongoClient()
+    db = client.passworddb
     return render_template('game.html')
 
 @application.route('/dashboard')
