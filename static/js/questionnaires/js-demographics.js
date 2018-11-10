@@ -26,22 +26,22 @@ $(document).ready(function(){
   function showTab(n) {
     // This function will display the specified tab of the form ...
     x = $(".tab");
-    x[n].style.display = "block";
-    /*
+    $(x[n]).css('display', 'block');
+
     // ... and fix the Previous/Next buttons:
     if (n == 0) {
-      document.getElementById("prevBtn").style.display = "none";
+      $('#prevBtn').css('display', 'none');
     } else {
-      document.getElementById("prevBtn").style.display = "inline";
+      $('#prevBtn').css('display', 'block');
     }
     if (n == (x.length - 1)) {
-      document.getElementById("nextBtn").innerHTML = "Submit";
+      $('#nextBtn').html('Submit');
     } else {
-      document.getElementById("nextBtn").innerHTML = "Next";
+      $('#nextBtn').html('Next');
     }
     // ... and run a function that displays the correct step indicator:
     fixStepIndicator(n)
-    */
+
   }
 
   function nextPrev(n) {
@@ -50,7 +50,7 @@ $(document).ready(function(){
     // Exit the function if any field in the current tab is invalid:
     if (n == 1 && !validateForm()) return false;
     // Hide the current tab:
-    x[currentTab].style.display = "none";
+    $(x[currentTab]).css('display', 'none');
     // Increase or decrease the current tab by 1:
     currentTab = currentTab + n;
     // if you have reached the end of the form... :
@@ -66,8 +66,8 @@ $(document).ready(function(){
   function validateForm() {
     // This function deals with validation of the form fields
     var x, y, i, valid = true;
-    x = document.getElementsByClassName("tab");
-    y = x[currentTab].getElementsByTagName("input");
+    x = $(".tab");
+    y = $(x[currentTab].find("input"));
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {
       // If a field is empty...
@@ -87,7 +87,7 @@ $(document).ready(function(){
 
   function fixStepIndicator(n) {
     // This function removes the "active" class of all steps...
-    var i, x = document.getElementsByClassName("step");
+    var i, x = $(".step");
     for (i = 0; i < x.length; i++) {
       x[i].className = x[i].className.replace(" active", "");
     }
