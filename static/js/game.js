@@ -134,6 +134,10 @@ var mainState = {
     transfer: function () {
         game.state.start('tree');
     }
+
+    randomUrl: function () {
+      
+    }
 };
 var treeState = {
     preload: function () {
