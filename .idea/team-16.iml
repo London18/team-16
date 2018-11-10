@@ -8,5 +8,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="phaser-behavior-plugin" level="application" />
+    <orderEntry type="library" name="phaser" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
   </component>
 </module>

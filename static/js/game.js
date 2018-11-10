@@ -3,13 +3,13 @@ var mainState = {
     preload: function () {
         game.load.crossOrigin = 'anonymous';
 
-        game.load.image('player', '../static/assets/character.png');
-        game.load.image('wall', '../static/assets/wall2.png');
-        game.load.image('coin', '../static/assets/coinv2.png');
-        game.load.image('teleport', '../static/assets/teleport.png');
-        game.load.image('door', '../static/assets/door.png');
-        game.load.image('question', '../static/assets/question.png');
-        game.load.image('grass', '../static/assets/grassTile.png');
+        game.load.image('player', 'assets/character.png');
+        game.load.image('wall', 'assets/wall2.png');
+        game.load.image('coin', 'assets/coinv2.png');
+        game.load.image('teleport', 'assets/teleport.png');
+        game.load.image('door', 'assets/door.png');
+        game.load.image('question', 'assets/question.png');
+        game.load.image('grass', 'assets/grassTile.png');
     },
 
     create: function () {
@@ -59,7 +59,7 @@ var mainState = {
             '! o             pppp                         x',
             '! o                                  pppp    x',
             '! o  ppp                    q                x',
-            '! o                        xxx               x',
+            '! o                        ppp               x',
             '! o                  q                       x',
             '! o          ppppppppppp                     x',
             '! o                                          x',
@@ -176,19 +176,6 @@ var treeState = {
 
         var level = [
             'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
-            '!                                            x',
             '!                                            x',
             '!                                            x',
             '!                                            x',
