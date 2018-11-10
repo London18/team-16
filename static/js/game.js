@@ -17,7 +17,7 @@ var mainState = {
     },
 
     create: function () {
-        scoreText = game.add.text(16, 16, 'score: 0', {fontSize: '32px', fill: '#000'});
+        scoreText = game.add.text(16, 16, 'score:' + score, {fontSize: '32px', fill: '#000'});
         game.stage.backgroundColor = '#ffffff';
         game.world.setBounds(0, 0, 5000, 5000);
 
@@ -27,7 +27,7 @@ var mainState = {
         game.world.enableBody = true;
 
 
-        this.player = game.add.sprite(190, 100, 'player');
+        this.player = game.add.sprite(190, 200, 'player');
         game.camera.follow(this.player);
         behaviorPlugin = game.plugins.add(Phaser.Plugin.Behavior); // init the Behavior plugin
 
@@ -51,10 +51,10 @@ var mainState = {
             '!                                            x',
             '!           o                  pppp          x',
             '!       o       o                    o       x',
-            '!                                            x',
-            '! o  ppp               q          o          x',
+            '!ppp                                             x',
+            '! o        pp          q          o          x',
             '!                     pppp           ppp     x',
-            '!                                            x',
+            '!   ppppp                                    x',
             '!           q                                x',
             '!          pppp                  o           x',
             '!                      q       ppppp         x',
@@ -151,12 +151,12 @@ var mainState = {
 };
 var treeState = {
     preload: function () {
-        game.load.image('player', '../static/assets/character.png');
-        game.load.image('wall', '../static/assets/wall2.png');
-        game.load.image('coin', '../static/assets/coinv2.png');
-        game.load.image('teleport', '../static/assets/teleport.png');
-        game.load.image('door', '../static/assets/door.png');
-        game.load.image('question', '../static/assets/question.png');
+        game.load.image('player', 'assets/fox.png');
+        game.load.image('wall', 'assets/wall2.png');
+        game.load.image('coin', 'assets/coinv2.png');
+        game.load.image('teleport', 'assets/teleport.png');
+        game.load.image('door', 'assets/door.png');
+        game.load.image('question', 'assets/question.png');
         game.load.image('tree', 'assets/treeSmall.png');
         game.load.image('tree1', 'assets/midTree.png');
         game.load.image('tree2', 'assets/treeBig.png');
@@ -173,7 +173,7 @@ var treeState = {
         game.world.enableBody = true;
 
 
-        this.player = game.add.sprite(190, 100, 'player');
+        this.player = game.add.sprite(190, 300, 'player');
         game.camera.follow(this.player);
         behaviorPlugin = game.plugins.add(Phaser.Plugin.Behavior); // init the Behavior plugin
 
