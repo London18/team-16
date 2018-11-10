@@ -87,5 +87,9 @@ def employment_status():
 def organisational_culture():
     return render_template('organisational_culture.html')
 
+@application.route('/customisation')
+def customisation():
+    return render_template('customisation.html')
+
 if __name__ == "__main__":
     application.run()
