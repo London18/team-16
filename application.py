@@ -4,7 +4,7 @@ import pymongo
 
 from pymongo import MongoClient
 application = Flask(__name__)
-
+ids = ""
 @application.route('/')
 @application.route('/index')
 def firstPage():
@@ -20,8 +20,11 @@ def my_form_post():
     registerEmail = request.form['registerEmail']
     registerPassword = request.form['registerPassword']
     registerConfirmPassword = request.form['registerConfirmPassword']
+    print(registerPassword)
+    print(registerConfirmPassword)
 
     if len(registerEmail) and len(registerPassword) and len(registerConfirmPassword) and registerPassword == registerConfirmPassword:
+        print("hello")
         posts = db.passwords
         post_id = posts.insert_one({"email":registerEmail,"pword":registerPassword})
         return render_template('index.html')
@@ -34,7 +37,8 @@ def my_form_post():
         if (document):
             if document['pword'] == emailPassword:
                 print("arg")
-                return render_template('index.html')
+                ids = document['_id']
+                return render_template('demographics.html')
 
         return render_template('index.html')
 
@@ -42,6 +46,28 @@ def my_form_post():
         return render_template('index.html', userEmail=str(emailLogin))
 
     return render_template('index.html')
+
+@application.route('/demographics')
+def demographics():
+    return render_template('demographics.html')
+@application.route('/demographics', methods=['POST'])
+def demographics_post():
+    print("HERE")
+    client = MongoClient()
+    db = client.passworddb
+
+    demAge = str(request.form['demographicsAge'])
+
+
+
+
+
+    demGen = str(request.form.get('sel1'))
+
+    posts = db.answers
+    post_id = posts.insert_one({"demAge":demAge,"demGender":demGen})
+
+    return render_template('demographics.html')
 
 
 
