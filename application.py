@@ -107,5 +107,10 @@ def organisational_culture():
 def customisation():
     return render_template('customisation.html')
 
+
+@application.route('/open_ended')
+def open_endedPage():
+    return render_template('open_ended.html')
+
 if __name__ == "__main__":
     application.run()
