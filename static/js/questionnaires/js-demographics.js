@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+  $('#submit').css('display', 'none');
   var currentTab = 0; // Current tab is set to be the first tab (0)
   showTab(currentTab); // Display the current tab
 
@@ -22,7 +23,8 @@ $(document).ready(function(){
       $('#prevBtn').css('display', 'inline');
     }
     if (n == (x.length - 1)) {
-      $('#nextBtn').html('Submit');
+      $('#nextBtn').css('display', 'none');
+      $('#submit').css('display', 'inline');
     } else {
       $('#nextBtn').html('Next');
     }
