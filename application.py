@@ -28,5 +28,9 @@ def tmpPage():
 def game():
     return render_template('game.html')
 
+@application.route('/dashboard')
+def dashboardPage():
+    return render_template('dashboard.html')
+
 if __name__ == "__main__":
     application.run()
