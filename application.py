@@ -17,7 +17,6 @@ def my_form_post():
     emailLogin = str(request.form['loginEmail'])
     emailPassword = str(request.form['loginPassword'])
 
-
     registerEmail = request.form['registerEmail']
     registerPassword = request.form['registerPassword']
     registerConfirmPassword = request.form['registerConfirmPassword']
@@ -41,6 +40,7 @@ def my_form_post():
 
     if len(emailLogin) or len(emailPassword):
         return render_template('index.html', userEmail=str(emailLogin))
+
     return render_template('index.html')
 
 
@@ -56,6 +56,10 @@ def dashboardPage():
 @application.route('/Employment_status')
 def employment_status():
     return render_template('employment_status.html')
+
+@application.route('/organisational_culture')
+def organisational_culture():
+    return render_template('organisational_culture.html')
 
 if __name__ == "__main__":
     application.run()
