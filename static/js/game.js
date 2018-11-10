@@ -128,7 +128,12 @@ var mainState = {
     },
     getQuestion: function (player, question) {
         question.kill();
-        window.open('demographics.html', '_blank');
+        var questionaires = ["demographics.html", "employment_status.html", "organisational_culture.html"];
+        var rand = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+        window.open(questionaires[rand], '_blank');
+        score += 5;
+        scoreText.text = 'Score: ' + score;
+
     },
 
 
@@ -214,9 +219,9 @@ var treeState = {
                     var door = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'door');
                     this.doors.add(door);
                 } else if (level[i][j] === 't') {
-                    if (score < 4) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree');
-                    if (score > 3 && score <= 7) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree1');
-                    if (score > 7) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree2');
+                    if (score < 8) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree');
+                    if (score > 7 && score <= 15) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree1');
+                    if (score > 15) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree2');
                     behaviorPlugin.enable(tree);
                     tree.behaviors.set('collide-on-wall', Phaser.Behavior.CollisionHandler, {
                         targets: this.walls
