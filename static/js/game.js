@@ -49,9 +49,9 @@ var mainState = {
         var level = [
             'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
             '!                                            x',
-            '!           o                  pppp          x',
+            '!           o                                x',
             '!       o       o                    o       x',
-            '!ppp                                             x',
+            '!ppp                                         x',
             '! o        pp          q          o          x',
             '!                     pppp           ppp     x',
             '!   ppppp                                    x',
