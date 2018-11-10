@@ -93,7 +93,13 @@ def game():
 
 @application.route('/dashboard')
 def dashboardPage():
-    return render_template('dashboard.html')
+    import affectr
+    result = ""
+    affectr.set_details("Khalil", "team16CFG")
+    result = print(affectr.client.classify_entity_sentiment(
+    "The UK economy has avoided falling back into a recession after recording faster-than-expected growth in the first three months of the year."
+)[0].sentiment.label)
+    return render_template('dashboard.html', sentiment=result)
 
 @application.route('/Employment_status')
 def employment_status():
