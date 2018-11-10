@@ -62,5 +62,9 @@ def game():
 def dashboardPage():
     return render_template('dashboard.html')
 
+@application.route('/Employment_status')
+def employment_status():
+    return render_template('EmploymentStatus.html')
+
 if __name__ == "__main__":
     application.run()
