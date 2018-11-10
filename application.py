@@ -101,7 +101,7 @@ def dashboardPage():
 )[0].sentiment.label)
     return render_template('dashboard.html', sentiment=result)
 
-@application.route('/Employment_status')
+@application.route('/employment_status')
 def employment_status():
     return render_template('employment_status.html')
 
@@ -127,7 +127,7 @@ def open_endedPage():
     oe2 = str(request.form['oe2'])
     oe3 = str(request.form['oe3'])
     oe4 = str(request.form['oe4'])
-    
+
 
     posts = db.openends
     post_id = posts.insert_one({"oe1":oe1})
