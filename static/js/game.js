@@ -5,17 +5,6 @@ var scoreText;
 var mainState = {
     preload: function () {
 
-<<<<<<< HEAD
-
-        game.load.image('player', '../templates/assets/fox.PNG');
-        game.load.image('wall', '../templates/assets/wall2.PNG');
-        game.load.image('coin', '../templates/assets/coinv2.PNG');
-        game.load.image('teleport', '../templates/assets/teleport.PNG');
-        game.load.image('door', '../templates/assets/door.PNG');
-        game.load.image('question', '../templates/assets/question.PNG');
-        game.load.image('grass', '../templates/assets/grass.PNG');
-        game.load.image('tree', '../templates/assets/treeSmall.PNG');
-=======
         wall = $('#wall').attr('src')
         player = $('#player').attr('src')
         coin = $('#coin').attr('src')
@@ -31,7 +20,6 @@ var mainState = {
         game.load.image('question', question);
         game.load.image('grass', grass);
         game.load.image('tree', tree);
->>>>>>> Fixed game
     },
 
     create: function () {
@@ -169,17 +157,6 @@ var mainState = {
 };
 var treeState = {
     preload: function () {
-<<<<<<< HEAD
-        game.load.image('player', '../templates/assets/fox.PNG');
-        game.load.image('wall', '../templates/assets/wall2.PNG');
-        game.load.image('coin', '../templates/assets/coinv2.PNG');
-        game.load.image('teleport', '../templates/assets/teleport.PNG');
-        game.load.image('door', '../templates/assets/door.PNG');
-        game.load.image('question', '../templates/assets/question.PNG');
-        game.load.image('tree', '../templates/assets/treeSmall.PNG');
-        game.load.image('tree1', '../templates/assets/midTree.PNG');
-        game.load.image('tree2', '../templates/assets/treeBig.PNG');
-=======
         wall = $('#wall').attr('src')
         player = $('#player').attr('src')
         coin = $('#coin').attr('src')
@@ -197,7 +174,6 @@ var treeState = {
         game.load.image('tree', tree);
         game.load.image('tree1', tree1);
         game.load.image('tree2', tree2);
->>>>>>> Fixed game
     },
 
     create: function () {
