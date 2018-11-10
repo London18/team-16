@@ -219,9 +219,11 @@ var treeState = {
                     var door = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'door');
                     this.doors.add(door);
                 } else if (level[i][j] === 't') {
+
                     if (score < 8) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree');
                     if (score > 7 && score <= 15) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree1');
                     if (score > 15) var tree = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'tree2');
+
                     behaviorPlugin.enable(tree);
                     tree.behaviors.set('collide-on-wall', Phaser.Behavior.CollisionHandler, {
                         targets: this.walls
