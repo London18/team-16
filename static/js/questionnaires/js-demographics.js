@@ -1,16 +1,4 @@
 $(document).ready(function(){
-  /*
-  $('#demographicsGender-Male').click(() => {changeGender('Male')})
-  $('#demographicsGender-Female').click(() => {changeGender('Female')})
-  $('#demographicsGender-Other').click(() => {changeGender('Other')})
-  $('#demographicsGender-PreferNotToSay').click(() => {changeGender('Prefer not to say')})
-
-  function changeGender(val){
-    g = "Gender: "
-    g = g.concat(val)
-    $('#demographicsGenderButton').html(g)
-  }
-  */
 
   var currentTab = 0; // Current tab is set to be the first tab (0)
   showTab(currentTab); // Display the current tab

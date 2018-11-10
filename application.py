@@ -36,7 +36,7 @@ def my_form_post():
 
 
         if (document):
-            
+
             if document['pword'] == emailPassword:
                 print("arg")
                 return render_template('index.html')
@@ -50,9 +50,9 @@ def my_form_post():
         return render_template('index.html', userEmail=str(emailLogin))
     return render_template('index.html')
 
-@application.route('/tmp')
-def tmpPage():
-    return render_template('tmp.html')
+@application.route('/demographics')
+def demographics():
+    return render_template('demographics.html')
 
 @application.route('/game')
 def game():
