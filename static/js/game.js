@@ -129,7 +129,7 @@ var mainState = {
     getQuestion: function (player, question) {
         question.kill();
         var questionaires = ["demographics.html", "employment_status.html", "organisational_culture.html"];
-        var rand = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+        var rand = Math.floor(Math.random() * 3);
         window.open(questionaires[rand], '_blank');
         score += 5;
         scoreText.text = 'Score: ' + score;
