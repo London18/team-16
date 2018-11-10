@@ -47,7 +47,7 @@ def my_form_post():
 def demographics():
     return render_template('demographics.html')
 @application.route('/demographics', methods=['POST'])
-def demographics():
+def demographics_post():
     return render_template('demographics.html')
 
 @application.route('/game')
