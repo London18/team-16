@@ -46,10 +46,10 @@ body, html {height: 100%}
 
       <div class="divLoginRegisterationForm">
 
-        <form id="loginForm" action="/action_page.php">
+        <form id="loginForm" method="POST"><!-- action="/action_page.php" -->
           <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            <label for="email">Email: {{userEmail}}</label>
+            <input type="email" class="form-control" id="emailLogin" placeholder="Enter email" name="emailLogin">
           </div>
           <div class="form-group">
             <label for="pwd">Password:</label>
@@ -57,7 +57,7 @@ body, html {height: 100%}
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
-        <form id="registerationForm" action="/action_page.php">
+        <form id="registerationForm" method="POST"><!-- action="/action_page.php" -->
           <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
