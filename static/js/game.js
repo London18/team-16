@@ -9,6 +9,7 @@ var mainState = {
         game.load.image('teleport', '../static/assets/teleport.png');
         game.load.image('door', '../static/assets/door.png');
         game.load.image('question', '../static/assets/question.png');
+        game.load.image('grass', '../static/assets/grassTile.png');
     },
 
     create: function () {
@@ -38,34 +39,35 @@ var mainState = {
         this.coins = game.add.group();
         this.teleports = game.add.group();
         this.questions = game.add.group();
+        this.grasses = game.add.group();
 
         var level = [
             'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
             '!  o                                         x',
-            '!           o                  xxxx          x',
+            '!           o                  pppp          x',
             '!       o       o                            x',
             '! o                                          x',
-            '! o  xxxx               q                    x',
-            '! o                   xxxx           xxx     x',
+            '! o  ppp               q                     x',
+            '! o                   pppp           ppp     x',
             '! o                                          x',
             '! o         q                                x',
-            '! o        xxxx                              x',
-            '! o                    q       xxxxx         x',
-            '! o                  xxxx                    x',
+            '! o        pppp                              x',
+            '! o                    q       ppppp         x',
+            '! o                  pppp                    x',
             '! o                                          x',
             '! o               q                          x',
-            '! o             xxxx                         x',
-            '! o                                  xxxx    x',
-            '! o  xxx                    q                x',
+            '! o             pppp                         x',
+            '! o                                  pppp    x',
+            '! o  ppp                    q                x',
             '! o                        xxx               x',
             '! o                  q                       x',
-            '! o          xxxxxxxxxxx                     x',
+            '! o          ppppppppppp                     x',
             '! o                                          x',
             '! o                                          x',
-            '! o      xxxxx                     xxxx      x',
+            '! o      ppppp                     pppp      x',
             '! o                                          x',
             '! o                                          x',
-            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+            'pppppppppppppppppppppppppppppppppppppppppppppp'
         ];
 
         for (var i = 0; i < level.length; i++) {
@@ -83,14 +85,24 @@ var mainState = {
                 } else if (level[i][j] === 'q') {
                     var question = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'question');
                     this.questions.add(question);
+                } else if (level[i][j] === 'p') {
+                    var grass = game.add.sprite(64 + 66 * j, 32 + 66 * i, 'grass');
+                    this.grasses.add(grass);
+                    grass.body.immovable = true;
                 }
+
             }
         }
 
         // collision handlers
         this.player.behaviors.set('collide-on-wall', Phaser.Behavior.CollisionHandler, {
             targets: this.walls
-        });
+        })
+        ;
+        this.player.behaviors.set('collide-on-grass', Phaser.Behavior.CollisionHandler, {
+            targets: this.grasses
+        })
+        ;
 
         this.player.behaviors.set('collide-on-teleport', Phaser.Behavior.CollisionHandler, {
             method: 'overlap',
