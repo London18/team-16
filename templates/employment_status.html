@@ -61,7 +61,7 @@ body, html {height: 100%}
       <script type = "text/javascript"  src="{{ url_for('static', filename = 'js/questionnaires/js-employment-status.js') }}" ></script>
       <form id="regForm" action="">
 
-        <h1>Demographics:</h1>
+        <h1>Employment Status:</h1>
         <div class="tab">
           <div class="form-group">
             <label for="Age">Have you been promoted? </label>
@@ -87,7 +87,7 @@ body, html {height: 100%}
             </select>
           </div>
           <div class="form-group">
-            <label for="Age">Have you changed your job role within the organisation: </label>
+            <label for="Age">Have you changed your job role within the organisation? </label>
             <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
             <label class="radio-inline"><input type="radio" name="optradio">No</label>
             <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
@@ -96,46 +96,22 @@ body, html {height: 100%}
 
         <div class="tab">
           <div class="form-group">
-            <label for="Age">Size of organisation: </label>
-            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+            <label for="Age">Are you currently looking for a job? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
           </div>
           <div class="form-group">
-            <label for="Age">Number of people you work with on a daily basis: </label>
-            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
-          </div>
-        </div>
-
-        <div class="tab">
-          <div class="form-group">
-            <label for="Age">Size of organisation: </label>
-            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+            <label for="Age">Are you no longer interested in being in employment? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
           </div>
           <div class="form-group">
-            <label for="Age">Number of people you work with on a daily basis: </label>
-            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
-          </div>
-        </div>
-
-        <div class="tab">
-          <div class="form-group">
-            <label for="Age">Months spent in organisation: </label>
-            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
-          </div>
-          <div class="form-group">
-            <label for="Age">Annual salary: </label>
-            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
-          </div>
-          <div class="form-group">
-            <label for="Age">Level of education (primary, secondary, diploma, undergraduate, postgraduate): </label>
-            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
-          </div>
-          <div class="form-group">
-            <label for="Age">Number of past jobs: </label>
-            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
-          </div>
-          <div class="form-group">
-            <label for="Age">Number of people from your personal life that you feel can provide support/advice about your work: </label>
-            <input type="text" class="form-control" id="demographicsAge" placeholder="Enter age" name="demographicsAge">
+            <label for="Age">Have you started a new job in a new organisation? </label>
+            <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Prefer not to say</label>
           </div>
         </div>
 
@@ -148,8 +124,6 @@ body, html {height: 100%}
 
         <!-- Circles which indicates the steps of the form: -->
         <div style="text-align:center;margin-top:40px;">
-          <span class="step"></span>
-          <span class="step"></span>
           <span class="step"></span>
           <span class="step"></span>
           <span class="step"></span>
